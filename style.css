@@ -1,0 +1,799 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Parisienne&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #eee1ce 0%,
+            #dfcfb9 55%,
+            #cdb99f 100%
+        );
+
+    color: #4a392d;
+
+    font-family: "Cormorant Garamond", Georgia, serif;
+}
+
+
+/* =========================
+   TELA INICIAL
+========================= */
+
+.inicio {
+    position: relative;
+
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 40px 20px;
+
+    overflow: hidden;
+}
+
+
+.inicio::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    opacity: 0.12;
+
+    background-image:
+        radial-gradient(#765f49 0.7px, transparent 0.7px);
+
+    background-size: 7px 7px;
+}
+
+
+/* =========================
+   DECORAÇÃO
+========================= */
+
+.decoracao {
+    position: absolute;
+
+    color: #927b62;
+
+    font-size: 22px;
+
+    opacity: 0.55;
+}
+
+
+.decoracao-esquerda {
+    top: 20%;
+    left: 15%;
+}
+
+
+.decoracao-direita {
+    bottom: 20%;
+    right: 15%;
+}
+
+
+/* =========================
+   ENVELOPE
+========================= */
+
+.carta-container {
+    position: relative;
+
+    width: 250px;
+    height: 185px;
+
+    margin-bottom: 30px;
+}
+
+
+.folha {
+    position: absolute;
+
+    width: 205px;
+    height: 135px;
+
+    left: 22px;
+    bottom: 15px;
+
+    background:
+        linear-gradient(
+            rgba(255, 255, 255, 0.6),
+            rgba(245, 237, 221, 0.6)
+        );
+
+    border: 1px solid #ded0bd;
+
+    box-shadow:
+        0 3px 10px rgba(73, 54, 36, 0.12);
+
+    z-index: 2;
+
+    transition:
+        transform 1.3s ease,
+        bottom 1.3s ease;
+}
+
+
+.linha-folha {
+    height: 1px;
+
+    background: #d8c8b4;
+
+    opacity: 0.35;
+
+    margin: 25px 20px 0;
+}
+
+
+.envelope {
+    position: absolute;
+
+    width: 250px;
+    height: 160px;
+
+    bottom: 0;
+    left: 0;
+
+    z-index: 3;
+}
+
+
+.corpo-envelope {
+    position: absolute;
+
+    width: 250px;
+    height: 160px;
+
+    bottom: 0;
+    left: 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            #e1cdb5,
+            #d4bda1
+        );
+
+    border: 1px solid #bda58a;
+
+    border-radius: 3px;
+
+    box-shadow:
+        0 16px 30px rgba(67, 49, 33, 0.18);
+}
+
+
+.aba {
+    position: absolute;
+
+    width: 0;
+    height: 0;
+
+    left: 0;
+    top: 0;
+
+    z-index: 5;
+
+    border-left: 125px solid transparent;
+    border-right: 125px solid transparent;
+    border-top: 90px solid #cbb397;
+
+    transform-origin: top center;
+
+    transition:
+        transform 1s cubic-bezier(.4,0,.2,1);
+}
+
+
+.selo {
+    position: absolute;
+
+    width: 48px;
+    height: 48px;
+
+    border-radius: 50%;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    background: #9c7763;
+
+    color: #f8eee2;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    font-size: 18px;
+
+    border: 2px solid #896651;
+
+    box-shadow:
+        0 4px 8px rgba(60, 42, 30, 0.2);
+
+    z-index: 6;
+
+    transition:
+        opacity 0.5s ease;
+}
+
+
+/* =========================
+   TÍTULO
+========================= */
+
+.titulo {
+    position: relative;
+
+    z-index: 10;
+}
+
+
+.pequeno-titulo {
+    display: block;
+
+    text-transform: uppercase;
+
+    letter-spacing: 4px;
+
+    font-size: 11px;
+
+    color: #806b55;
+
+    margin-bottom: 5px;
+}
+
+
+.titulo h1 {
+    font-family: "Parisienne", cursive;
+
+    font-size: 56px;
+
+    font-weight: normal;
+
+    color: #4b382b;
+}
+
+
+.ornamento {
+    color: #92775d;
+
+    font-size: 18px;
+
+    margin: 4px 0 5px;
+}
+
+
+.titulo p {
+    font-size: 16px;
+
+    font-style: italic;
+
+    color: #796754;
+}
+
+
+/* =========================
+   BOTÃO
+========================= */
+
+button {
+    position: relative;
+
+    z-index: 10;
+
+    margin-top: 25px;
+
+    padding: 12px 30px;
+
+    border: 1px solid #8d735b;
+
+    background: rgba(255, 249, 239, 0.45);
+
+    color: #594433;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 16px;
+
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    border-radius: 2px;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+button:hover {
+    background: #705542;
+
+    color: #fff9f0;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   ASSINATURA INICIAL
+========================= */
+
+.rodape {
+    position: absolute;
+
+    bottom: 25px;
+
+    font-family: "Parisienne", cursive;
+
+    font-size: 22px;
+
+    color: #806a53;
+
+    opacity: 0.7;
+}
+
+
+/* =========================
+   ANIMAÇÃO
+========================= */
+
+.inicio.abrindo .aba {
+    transform: rotateX(180deg);
+}
+
+
+.inicio.abrindo .folha {
+    bottom: 105px;
+
+    transform: translateY(-12px);
+}
+
+
+.inicio.abrindo .selo {
+    opacity: 0;
+}
+
+
+.inicio.abrindo .envelope {
+    animation: respirar 1.2s ease;
+}
+
+
+@keyframes respirar {
+
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-3px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =========================
+   CARTA ABERTA
+========================= */
+
+.carta {
+    display: none;
+
+    min-height: 100vh;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 50px 20px;
+}
+
+
+.papel {
+    position: relative;
+
+    width: 100%;
+
+    max-width: 720px;
+
+    background:
+        linear-gradient(
+            rgba(255, 252, 243, 0.96),
+            rgba(247, 238, 222, 0.96)
+        );
+
+    border: 1px solid #d6c4ad;
+
+    padding: 60px 70px;
+
+    box-shadow:
+        0 20px 50px rgba(67, 48, 31, 0.18);
+
+    animation: aparecer 1.2s ease;
+
+    line-height: 1.9;
+}
+
+
+.papel::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 14px;
+
+    border: 1px solid rgba(154, 128, 99, 0.25);
+
+    pointer-events: none;
+}
+
+
+.cabecalho-carta {
+    display: flex;
+
+    justify-content: space-between;
+
+    font-size: 13px;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+    color: #927b62;
+
+    margin-bottom: 45px;
+}
+
+
+.conteudo-carta {
+    position: relative;
+
+    z-index: 2;
+}
+
+
+.papel h2 {
+    font-family: "Parisienne", cursive;
+
+    font-size: 42px;
+
+    font-weight: normal;
+
+    margin-bottom: 30px;
+
+    color: #49372a;
+}
+
+
+.papel p {
+    font-size: 19px;
+
+    margin-bottom: 22px;
+
+    color: #514237;
+}
+
+
+.despedida {
+    margin-top: 40px;
+
+    margin-bottom: 0 !important;
+}
+
+
+.assinatura {
+    font-family: "Parisienne", cursive;
+
+    font-size: 34px !important;
+
+    text-align: right;
+
+    margin-top: 0 !important;
+}
+
+
+/* =========================
+   FAIXA DE MÚSICA
+========================= */
+
+.faixa-musica {
+    width: 100%;
+
+    max-width: 520px;
+
+    margin: 45px auto 0;
+
+    padding: 12px 16px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    background: rgba(74, 57, 45, 0.08);
+
+    border: 1px solid rgba(141, 115, 91, 0.35);
+
+    border-radius: 8px;
+
+    box-shadow:
+        0 5px 15px rgba(67, 48, 31, 0.08);
+}
+
+
+/* =========================
+   CAPA PEQUENA
+========================= */
+
+.faixa-musica img {
+    width: 58px !important;
+
+    height: 58px !important;
+
+    min-width: 58px;
+
+    min-height: 58px;
+
+    max-width: 58px;
+
+    max-height: 58px;
+
+    object-fit: cover;
+
+    border-radius: 4px;
+
+    display: block;
+
+    flex-shrink: 0;
+}
+
+
+/* =========================
+   INFORMAÇÕES
+========================= */
+
+.info-musica {
+    flex: 1;
+
+    min-width: 0;
+
+    text-align: left;
+}
+
+
+.nome-musica {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 17px;
+
+    font-weight: 600;
+
+    color: #4a392d;
+
+    margin-bottom: 2px;
+}
+
+
+.artista-musica {
+    font-size: 14px;
+
+    color: #806b55;
+
+    margin-bottom: 7px;
+}
+
+
+/* =========================
+   BARRA
+========================= */
+
+.progresso-musica {
+    width: 100%;
+
+    height: 3px;
+
+    background: #d8c8b4;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+}
+
+
+.progresso {
+    width: 32%;
+
+    height: 100%;
+
+    background: #80624f;
+
+    border-radius: 10px;
+}
+
+
+/* =========================
+   CONTROLES
+========================= */
+
+.controles-musica {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    flex-shrink: 0;
+}
+
+
+.controles-musica span {
+    font-size: 15px;
+
+    color: #594433;
+}
+
+
+.controles-musica .play {
+    font-size: 18px;
+}
+
+
+/* =========================
+   FINAL
+========================= */
+
+.final-papel {
+    text-align: center;
+
+    color: #9b8064;
+
+    margin-top: 35px;
+
+    font-size: 20px;
+}
+
+
+/* =========================
+   ANIMAÇÃO CARTA
+========================= */
+
+@keyframes aparecer {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(40px)
+            scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+
+}
+
+
+/* =========================
+   CELULAR
+========================= */
+
+@media (max-width: 600px) {
+
+    .decoracao-esquerda {
+        left: 7%;
+    }
+
+
+    .decoracao-direita {
+        right: 7%;
+    }
+
+
+    .carta-container {
+        transform: scale(0.85);
+
+        margin-bottom: 15px;
+    }
+
+
+    .titulo h1 {
+        font-size: 48px;
+    }
+
+
+    .titulo p {
+        font-size: 15px;
+    }
+
+
+    .papel {
+        padding: 45px 30px;
+    }
+
+
+    .papel h2 {
+        font-size: 36px;
+    }
+
+
+    .papel p {
+        font-size: 17px;
+    }
+
+
+    .faixa-musica {
+        max-width: 100%;
+
+        padding: 10px 12px;
+
+        gap: 10px;
+    }
+
+
+    .faixa-musica img {
+        width: 50px !important;
+
+        height: 50px !important;
+
+        min-width: 50px;
+
+        min-height: 50px;
+
+        max-width: 50px;
+
+        max-height: 50px;
+    }
+
+
+    .nome-musica {
+        font-size: 16px;
+    }
+
+
+    .artista-musica {
+        font-size: 13px;
+    }
+
+
+    .controles-musica {
+        gap: 6px;
+    }
+
+}
